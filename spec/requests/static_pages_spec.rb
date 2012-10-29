@@ -5,9 +5,7 @@ describe "Static pages" do
   let(:base_title) {"Ruby on Rails Tutorial Sample App"}
 
   describe  "Home page" do
-    before(:each) do
-      visit root_path
-    end
+    before { visit root_path }
 
     it "should have the h1 'Sample App'" do
       page.should have_selector('h1', text: 'Sample App')
@@ -24,24 +22,19 @@ describe "Static pages" do
   end
 
   describe "Help page" do
-    before(:each) do
-      visit help_path
-    end
+    before { visit help_path }
 
     it "should have the content 'Help'" do
       page.should have_selector('h1', text: 'Help')
     end
     
     it "should have the right title" do
-      visit '/static_pages/help'
       page.should have_selector('title', text: "#{base_title} | Help")
     end
   end
   
   describe "About page" do
-    before(:each) do
-      visit about_path
-    end
+    before { visit about_path }
 
     it "should have the content 'About Us'" do
       page.should have_selector('h1', text: 'About Us')
@@ -53,9 +46,7 @@ describe "Static pages" do
   end
   
   describe "Contact page" do
-    before(:each) do
-      visit contact_path
-    end
+    before { visit contact_path }
 
     it "should have the h1 'Contact'" do
       page.should have_selector('h1', text: 'Contact')
